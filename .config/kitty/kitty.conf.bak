@@ -1,0 +1,15 @@
+# BEGIN_KITTY_FONTS
+font_family      FiraCode Nerd Font
+bold_font        FiraCode Nerd Font
+italic_font      Rec Mono Casual Nerd Font
+bold_italic_font Rec Mono Casual Nerd Font
+# END_KITTY_FONTS
+
+enable_audio_bell no
+allow_remote_control true
+
+# BEGIN_KITTY_THEME
+# Tokyo Night Moon
+include current-theme.conf
+# END_KITTY_THEME
+
