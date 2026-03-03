@@ -32,4 +32,14 @@ vim.o.mouse = 'a'
 -- Keep cursor fat
 vim.opt.guicursor = ""
 
+vim.opt.foldcolumn = '4'
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
+
+vim.opt.fillchars = {
+  foldopen = "",
+  foldclose = "",
+}
+
 vim.diagnostic.config({ virtual_text = true })

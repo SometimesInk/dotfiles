@@ -5,8 +5,9 @@ return {
     local conform = require('conform')
     conform.setup({
       formatters_by_ft = {
-        lua = { "prettier"},
+        lua = { "prettier" },
         c = { "clang-format" },
+        java = { "prettier" },
 
         ["_"] = { "trim_whitespace" },
       },
@@ -21,9 +22,9 @@ return {
               ".prettierrc.js",
               "prettier.config.js",
             }, {
-                upward = true,
-                path = ctx.dirname
-              })[1]
+              upward = true,
+              path = ctx.dirname
+            })[1]
             return root ~= nil
           end,
         }
@@ -53,16 +54,16 @@ return {
         vim.notify("Formatting disabled.")
       end
     end, {
-        desc = "Disable autoformat-on-save",
-        bang = true,
-      })
+      desc = "Disable autoformat-on-save",
+      bang = true,
+    })
     vim.api.nvim_create_user_command("FormatEnable", function()
       vim.b.disable_autoformat = false
       vim.g.disable_autoformat = false
       vim.notify("Formatting enabled.")
     end, {
-        desc = "Re-enable autoformat-on-save",
-      })
+      desc = "Re-enable autoformat-on-save",
+    })
   end,
   keys = {
     {
@@ -84,21 +85,22 @@ return {
           bufnr = bufnr,
           async = true,
         }, function(err)
-            if err then
-              vim.notify("Format failed: " .. err, vim.log.levels.ERROR)
-            else
-              local used_formatters = {}
-              for _, formatter in ipairs(formatters) do
-                if formatter.available then
-                  table.insert(used_formatters, formatter.name)
-                end
-              end
-              if #used_formatters > 0 then
-                vim.notify("Formatted with: " .. table.concat(used_formatters, ", "), vim.log.levels.INFO)
+          if err then
+            vim.notify("Format failed: " .. err, vim.log.levels.ERROR)
+          else
+            local used_formatters = {}
+            for _, formatter in ipairs(formatters) do
+              if formatter.available then
+                table.insert(used_formatters, formatter.name)
               end
             end
-          end)
+            if #used_formatters > 0 then
+              vim.notify("Formatted with: " .. table.concat(used_formatters, ", "), vim.log.levels.INFO)
+            end
+          end
+        end)
       end,
       desc = "Format buffer",
     }
-  }}
+  }
+}
