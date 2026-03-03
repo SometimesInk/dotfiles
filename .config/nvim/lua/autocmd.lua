@@ -30,18 +30,35 @@ vim.api.nvim_create_autocmd("BufNewFile", {
   end,
 })
 
-vim.filetype.add({
-  pattern = {
-    ["Makefile"] = "make",
-    ["makefile"] = "make",
-    [".*%.env.*"] = "sh",
-  },
-  extension = {
-    make = "make",
+vim.api.nvim_create_autocmd("BufReadPost", {
+  pattern = "mcmod.info",
+  callback = function(args)
+    vim.bo[args.buf].filetype = "json"
+  end,
+})
 
-    vert = "glsl",
-    frag = "glsl",
-    geom = "glsl",
-    comp = "glsl",
-  },
+--[[
+--vim.filetype.add({
+--  pattern = {
+--    ["Makefile"] = "make",
+--    ["makefile"] = "make",
+--    [".*%.env.*"] = "sh",
+--  },
+--  extension = {
+--    make = "make",
+--
+--    vert = "glsl",
+--    frag = "glsl",
+--    geom = "glsl",
+--    comp = "glsl",
+--  },
+--})
+--]]
+
+-- Enable java folding
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "java",
+  callback = function()
+    vim.opt_local.foldmarker = "<editor-fold>,</editor-fold>"
+  end,
 })

@@ -1,6 +1,11 @@
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("clangd")
 vim.lsp.enable("jdtls")
+vim.lsp.enable("taplo")
+--vim.lsp.enable("cmake")
+vim.lsp.enable("pyright")
+vim.lsp.enable("jsonls")
+vim.lsp.enable("bashls")
 
 -- Set keybinds when lsp attaches
 vim.api.nvim_create_autocmd("LspAttach", {
