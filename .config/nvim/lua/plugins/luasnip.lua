@@ -10,9 +10,12 @@ return {
     -- Load friendly-snippets (VSCode format)
     require("luasnip.loaders.from_vscode").lazy_load()
 
-    -- Load your own Lua-based snippets
+    -- Lua-based snippets
     require("luasnip.loaders.from_lua").load({
-      paths = vim.fn.stdpath("config") .. "/snippets", -- put snippets here
+      paths = {
+        vim.fn.stdpath("config") .. "/snippets", -- Throughout nvim
+        -- "./.snippets"                            -- Project only
+      }
     })
   end,
 }
