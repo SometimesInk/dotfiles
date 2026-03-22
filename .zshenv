@@ -14,3 +14,4 @@ export SAVESIZE=$HISTSIZE
 
 # Add cargo to path
 export PATH="$PATH:/home/ink/.cargo/bin"
+export PATH="$PATH:/usr/lib/ccache/bin"

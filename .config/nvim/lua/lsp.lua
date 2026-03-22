@@ -6,6 +6,8 @@ vim.lsp.enable("taplo")
 vim.lsp.enable("pyright")
 vim.lsp.enable("jsonls")
 vim.lsp.enable("bashls")
+vim.lsp.enable("html")
+vim.lsp.enable("ts_ls")
 
 -- Set keybinds when lsp attaches
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -20,8 +22,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     k('n', 'gD', vim.lsp.buf.declaration, opts)
     k('n', 'gd', vim.lsp.buf.definition, opts)
-    k('n', 'gi', vim.lsp.buf.implementation, opts)
-    k('n', 'gr', vim.lsp.buf.references, opts)
+    k('n', 'gri', vim.lsp.buf.implementation, opts)
+    k('n', 'grr', vim.lsp.buf.references, opts)
+    k('n', 'gra', vim.lsp.buf.code_action, opts)
 
     k('n', ']g', vim.diagnostic.goto_next, opts)
     k('n', '[g', vim.diagnostic.goto_prev, opts)
