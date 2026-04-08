@@ -8,6 +8,7 @@ return {
         lua = { "prettier" },
         c = { "clang-format" },
         java = { "prettier" },
+        cmake = { "cmake_format" },
 
         ["_"] = { "trim_whitespace" },
       },
@@ -42,6 +43,12 @@ return {
       end,
       notify_on_error = true,
     })
+
+    -- Configure formatters
+    conform.formatters.cmake_format = {
+      command = "cmake-format",
+      stdin = true,
+    }
 
     -- Create keymaps for enable/disable format
     vim.api.nvim_create_user_command("FormatDisable", function(args)
