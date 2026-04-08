@@ -43,3 +43,8 @@ vim.opt.fillchars = {
 }
 
 vim.diagnostic.config({ virtual_text = true })
+
+vim.fn.sign_define("DapBreakpoint", { text = "点" })
+
+--vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg = "#c53b53", bg = '#222436' })
+--vim.api.nvim_set_hl(0, 'DapStopped', { fg = "#636da6", bg = '#222436' })
