@@ -1,0 +1,16 @@
+//spawn-at-startup "waybar"
+spawn-at-startup "awww-daemon"
+
+include "layout/layout.kdl"
+include "layout/animations.kdl"
+
+include "binds/binds.kdl"
+include "binds/binds_special.kdl"
+include "binds/binds_move.kdl"
+include "binds/binds_scroll.kdl"
+include "binds/binds_columns.kdl"
+
+include "rules.kdl"
+include "input.kdl"
+include "monitors.kdl"
+include "misc.kdl"
