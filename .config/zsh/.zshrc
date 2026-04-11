@@ -73,6 +73,5 @@ alias ls='ls --color'
 alias lsa='ls -A --color'
 
 # Add starship.rs
-eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
