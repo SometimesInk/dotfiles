@@ -11,9 +11,6 @@ echo "assume a Wayland compositor."
 echo ""
 echo "As an additional note, this is incomplete and untested."
 
-# Elevate permissions.
-su
-
 # Checks whether a specific command ($1) exists on the system.
 exist () {
   if type "$1" >/dev/null 2>&1; then
