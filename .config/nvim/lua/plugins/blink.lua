@@ -3,6 +3,9 @@ return {
   event = "InsertEnter",
   dependencies = {
     {
+      "saghen/blink.lib",
+    },
+    {
       "saghen/blink.compat",
       opts = {
         enable_events = true
@@ -28,9 +31,6 @@ return {
     },
     completion = {
       ghost_text = {
-        enabled = true,
-      },
-      signature = {
         enabled = true,
       },
       documentation = {
