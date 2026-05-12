@@ -8,6 +8,7 @@ return {
     vim.g.vimtex_compiler_latexmk = {
       options = {
         "-shell-escape", -- needed for svg package
+        "-xelatex"
       },
       continuous = 1,
     }
