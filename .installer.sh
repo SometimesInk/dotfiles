@@ -131,6 +131,7 @@ COMMON_PACKAGES=(
   brightnessctl
   playerctl
   wl-clipboard
+  kitty
 )
 
 MISSING_PKGS=()
