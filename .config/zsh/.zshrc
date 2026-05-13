@@ -36,6 +36,7 @@ setopt hist_find_no_dups
 # Aliases
 alias ls='ls --color'
 alias lsa='ls -A --color'
+alias vi='nvim'
 
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
