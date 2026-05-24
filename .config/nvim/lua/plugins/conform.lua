@@ -7,6 +7,7 @@ return {
       formatters_by_ft = {
         lua = { "prettier" },
         c = { "clang-format" },
+        cpp = { "clang-format" },
         java = { "prettier" },
         cmake = { "cmake_format" },
 

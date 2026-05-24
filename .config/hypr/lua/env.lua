@@ -1,0 +1,5 @@
+EnvTerm = "kitty"
+EnvFm = "dolphin"
+EnvImf = "fcitx5"
+EnvPicker = "hyprpicker | wl-copy"
+EnvCliphist = "cliphist list | wofi --dmenu --pre-display-cmd \"echo '%s' | cut -f 2\" | cliphist decode | wl-copy"
