@@ -1,15 +1,15 @@
-local ns = vim.api.nvim_create_namespace("c_doc_tags")
+local ns = vim.api.nvim_create_namespace("cpp_doc_tags")
 
 vim.api.nvim_set_hl(0, "DocTag", { link = "@comment.tag" })
 
-local query = vim.treesitter.query.parse("c", [[
+local query = vim.treesitter.query.parse("cpp", [[
   (comment) @comment
 ]])
 
 local function highlight(buf)
   vim.api.nvim_buf_clear_namespace(buf, ns, 0, -1)
 
-  local parser = vim.treesitter.get_parser(buf, "c")
+  local parser = vim.treesitter.get_parser(buf, "cpp")
   local tree = parser:parse()[1]
   local root = tree:root()
 
@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd(
   {
     callback = function(args)
       local filetype = vim.bo[args.buf].filetype
-      if filetype == "c" then
+      if filetype == "cpp" then
         highlight(args.buf)
       end
     end,
