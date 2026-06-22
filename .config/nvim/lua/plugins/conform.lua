@@ -10,6 +10,7 @@ return {
         cpp = { "clang-format" },
         java = { "prettier" },
         cmake = { "cmake_format" },
+        python = { "ruff" },
 
         ["_"] = { "trim_whitespace" },
       },

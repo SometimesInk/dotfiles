@@ -6,6 +6,11 @@ local t = ls.text_node
 local i = ls.insert_node
 
 -- Helper: get filename in uppercase, replacing dots with underscores
+local function class_name()
+  return vim.fn.expand("%:t:r")
+end
+
+-- Helper: get filename in uppercase, replacing dots with underscores
 local function package_name()
   local filepath = vim.fn.expand("%:p")
   local root = vim.fn.getcwd()
@@ -62,6 +67,12 @@ return {
       else
         return "package ;"
       end
+    end),
+    ls.text_node({ "", "", "" }),
+  }),
+  s("lg", {
+    f(function()
+      return "private static final Logger LOG = LogManager.getLogger(" .. class_name() .. ".class);"
     end),
     ls.text_node({ "", "", "" }),
   }),
