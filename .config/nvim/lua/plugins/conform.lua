@@ -8,7 +8,7 @@ return {
         lua = { "prettier" },
         c = { "clang-format" },
         cpp = { "clang-format" },
-        java = { "prettier" },
+        java = { "google-java-format" },
         cmake = { "cmake_format" },
         python = { "ruff" },
 
