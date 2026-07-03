@@ -10,6 +10,7 @@ vim.lsp.enable("bashls")
 vim.lsp.enable("html")
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("yaml_ls")
+vim.lsp.enable("emmet_ls")
 
 -- Set keybinds when lsp attaches
 vim.api.nvim_create_autocmd("LspAttach", {
